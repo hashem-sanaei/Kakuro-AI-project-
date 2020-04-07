@@ -1396,31 +1396,3 @@ class Kakuro(NaryCSP):
                 else:
                     puzzle += str(element[0]) + "\\" + str(element[1]) + "\t"
             print(puzzle)
-
-
-# # ______________________________________________________________________________
-# # Cryptarithmetic Problem
-
-# # [Figure 6.2]
-# # T W O + T W O = F O U R
-# two_two_four = NaryCSP({'T': set(range(1, 10)), 'F': set(range(1, 10)),
-#                         'W': set(range(0, 10)), 'O': set(range(0, 10)), 'U': set(range(0, 10)), 'R': set(range(0, 10)),
-#                         'C1': set(range(0, 2)), 'C2': set(range(0, 2)), 'C3': set(range(0, 2))},
-#                        [Constraint(('T', 'F', 'W', 'O', 'U', 'R'), all_diff_constraint),
-#                         Constraint(('O', 'R', 'C1'), lambda o, r, c1: o + o == r + 10 * c1),
-#                         Constraint(('W', 'U', 'C1', 'C2'), lambda w, u, c1, c2: c1 + w + w == u + 10 * c2),
-#                         Constraint(('T', 'O', 'C2', 'C3'), lambda t, o, c2, c3: c2 + t + t == o + 10 * c3),
-#                         Constraint(('F', 'C3'), eq)])
-
-# # S E N D + M O R E = M O N E Y
-# send_more_money = NaryCSP({'S': set(range(1, 10)), 'M': set(range(1, 10)),
-#                            'E': set(range(0, 10)), 'N': set(range(0, 10)), 'D': set(range(0, 10)),
-#                            'O': set(range(0, 10)), 'R': set(range(0, 10)), 'Y': set(range(0, 10)),
-#                            'C1': set(range(0, 2)), 'C2': set(range(0, 2)), 'C3': set(range(0, 2)),
-#                            'C4': set(range(0, 2))},
-#                           [Constraint(('S', 'E', 'N', 'D', 'M', 'O', 'R', 'Y'), all_diff_constraint),
-#                            Constraint(('D', 'E', 'Y', 'C1'), lambda d, e, y, c1: d + e == y + 10 * c1),
-#                            Constraint(('N', 'R', 'E', 'C1', 'C2'), lambda n, r, e, c1, c2: c1 + n + r == e + 10 * c2),
-#                            Constraint(('E', 'O', 'N', 'C2', 'C3'), lambda e, o, n, c2, c3: c2 + e + o == n + 10 * c3),
-#                            Constraint(('S', 'M', 'O', 'C3', 'C4'), lambda s, m, o, c3, c4: c3 + s + m == o + 10 * c4),
-#                            Constraint(('M', 'C4'), eq)])
