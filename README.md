@@ -32,3 +32,6 @@ The time-table:
           KAKURO4         1097825 microsec            21 microsec                       35 microsec
 
 So, we notice that simple backtracking is by far the slowest algorithm, while FC and MAC have close times but obviously faster is FC. This result was expected because the FC and MAC are improvements  BT. 
+# Run
+
+In order to run the program you need at least python 3.3
