@@ -7,9 +7,9 @@ Kakuro is a logic puzzle that is often referred to as a mathematical translitera
 There are four different puzzles to be solved and there have been 3 different algorithms to achieve that.
 The algorithms are:
 
-  *BackTracking (BT)
-  *Forward Checking (FC)
-  *Maintaining Arc Consistency (MAC)
+Markup: *BackTracking (BT)
+        *Forward Checking (FC)
+        *Maintaining Arc Consistency (MAC)
 
 Those algorithms were forked by AIMA (https://github.com/aimacode/aima-python).
 
