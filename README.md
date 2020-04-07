@@ -22,13 +22,13 @@ The file of my code is kakuro.py and all the rest are also from AIMA.
 The time-table: 
 
 
-          SIMPLE BACKTRACKING - BT   | FORWARD CHECKING - FC   |  MAINTAINING ARC CONSISTENCY - MAC 
-KAKURO1           25 microsec              0,... microsec                     1 microsec
+                     SIMPLE BACKTRACKING - BT   | FORWARD CHECKING - FC   |  MAINTAINING ARC CONSISTENCY - MAC 
+          KAKURO1           25 microsec              0,... microsec                     1 microsec
 
-KAKURO2           2 microsec               0,... microsec                     1 microsec
+          KAKURO2           2 microsec               0,... microsec                     1 microsec
 
-KAKURO3          44431 microsec              4 microsec                       7 microsec
+          KAKURO3          44431 microsec              4 microsec                       7 microsec
 
-KAKURO4         1097825 microsec            21 microsec                       35 microsec
+          KAKURO4         1097825 microsec            21 microsec                       35 microsec
 
 So, we notice that simple backtracking is by far the slowest algorithm, while FC and MAC have close times but obviously faster is FC. This result was expected because the FC and MAC are improvements  BT. 
