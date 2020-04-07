@@ -1,4 +1,4 @@
-# Kakuro-AI
+# Kakuro
 
 Kakuro is a logic puzzle that is often referred to as a mathematical transliteration of the crossword. The puzzle is played in a grid of filled and barred cells, "black" and "white" respectively. The black cells contain a diagonal slash from upper-left to lower-right and a number in one or both halves, such that each horizontal entry has a number in the black half-cell to its immediate left and each vertical entry has a number in the black half-cell immediately above it. The objective of the puzzle is to insert a digit from 1 to 9 inclusive into each white cell such that the sum of the numbers in each entry matches the clue associated with it and that no digit is duplicated in any entry.
 
@@ -7,9 +7,9 @@ Kakuro is a logic puzzle that is often referred to as a mathematical translitera
 There are four different puzzles to be solved and there have been 3 different algorithms to achieve that.
 The algorithms are:
 
--BackTracking (BT)
--Forward Checking (FC)
--Maintaining Arc Consistency (MAC)
+  -BackTracking (BT)
+  -Forward Checking (FC)
+  -Maintaining Arc Consistency (MAC)
 
 Those algorithms were forked by AIMA (https://github.com/aimacode/aima-python).
 
