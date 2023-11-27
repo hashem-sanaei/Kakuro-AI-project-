@@ -2,6 +2,25 @@ from csp import *
 import time
 
 class Kakuro(CSP):
+    """
+    Kakuro class represents a Kakuro puzzle solver.
+
+    Attributes:
+        puzzle (list): The Kakuro puzzle grid.
+        sumsAndVar (list): List of tuples representing the sums and variables involved in the puzzle.
+    """
+
+    def __init__(self, puzzle):
+        """
+        Initializes a Kakuro puzzle solver.
+
+        Args:
+            puzzle (list): The Kakuro puzzle grid.
+        """
+        self.puzzle = puzzle
+        variables = []
+        
+class Kakuro(CSP):
 
     def __init__(self, puzzle):
 
@@ -110,7 +129,7 @@ class Kakuro(CSP):
                     else:
                         return False
         return True
-
+    
     def display(self, assignment=None):
         for i, line in enumerate(self.puzzle):
             puzzle = ""
@@ -125,9 +144,9 @@ class Kakuro(CSP):
                     if len(var2) == 1:
                         var2 = "0" + var2
                     var = "X" + var1 + var2
-                    if assignment is not None:
-                        if isinstance(assignment[var], set) and len(assignment[var]) is 1:
-                            puzzle += "[" + str(first(assignment[var])) + "]\t"
+                    if assignment is not None and var in assignment:
+                        if isinstance(assignment[var], set) and len(assignment[var]) == 1:
+                            puzzle += "[" + str(next(iter(assignment[var]))) + "]\t"
                         elif isinstance(assignment[var], int):
                             puzzle += "[" + str(assignment[var]) + "]\t"
                         else:
@@ -137,6 +156,7 @@ class Kakuro(CSP):
                 else:
                     puzzle += str(element[0]) + "\\" + str(element[1]) + "\t"
             print(puzzle)
+
 
 print()
 print()
