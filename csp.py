@@ -370,6 +370,22 @@ def lcv(var, assignment, csp):
     """Least-constraining-values heuristic."""
     return sorted(csp.choices(var), key=lambda val: csp.nconflicts(var, val, assignment))
 
+def lcv_score(csp, var, value, assignment):
+    score = 0
+    for neighbor in csp.neighbors[var]:
+        if neighbor not in assignment:
+            for neighbor_value in csp.choices(neighbor):
+                if not csp.constraints(var, value, neighbor, neighbor_value):
+                    score += 1  # افزایش امتیاز برای هر تداخل
+    return score
+
+def mrv_lcv(assignment, csp):
+    unassigned_vars = [var for var in csp.variables if var not in assignment]
+    return argmin_random_tie(unassigned_vars, key=lambda var: (num_legal_values(csp, var, assignment), -lcv_score(csp, var, assignment)))
+
+def lcv_ordered_values(var, assignment, csp):
+    return sorted(csp.choices(var), key=lambda val: lcv_score(csp, var, val, assignment))
+
 
 # Inference
 
@@ -1270,6 +1286,7 @@ class Crossword(NaryCSP):
 
 # # ______________________________________________________________________________
 # Kakuro Problem
+
 
 
 # difficulty easy

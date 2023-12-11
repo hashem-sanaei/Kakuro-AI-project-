@@ -179,15 +179,14 @@ kakuro_fw.display(kakuro_fw.infer_assignment())
 print()
 
 start = float(round(time.time() * 1000))
-result = backtracking_search(kakuro_fw, inference=forward_checking)
+result = backtracking_search(kakuro_fw, select_unassigned_variable=mrv_lcv, order_domain_values=lcv_ordered_values)
 end = float(round(time.time() * 1000))
 
 if not result:
 	print("There's no result for this algorithm")
 
 totalTime = end - start;
-print("Problem solved with forward checking search in ", totalTime,"microseconds")
-
+print("Problem solved with MRV and LCV search in ", totalTime,"microseconds")
 print()
 kakuro_fw.display(kakuro_fw.infer_assignment())
 print()
